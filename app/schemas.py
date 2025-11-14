@@ -13,6 +13,12 @@ class PostBase(BaseModel):
 class PostCreate(PostBase):
     pass
 
+class UserOut(BaseModel):
+    id: int
+    email: EmailStr
+    created_at: datetime
+
+    model_config = {"from_attributes": True}
 
 class Post(PostBase):
     id: int
@@ -29,13 +35,6 @@ class PostOut(BaseModel):
 class UserCreate(BaseModel):
     email: EmailStr
     password: str
-
-class UserOut(BaseModel):
-    id: int
-    email: EmailStr
-    created_at: datetime
-
-    model_config = {"from_attributes": True}
 
 class UserLogin(BaseModel):
     email: EmailStr
