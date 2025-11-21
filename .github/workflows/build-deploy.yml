@@ -70,7 +70,7 @@ jobs:
       #     annotations: ${{ steps.meta.outputs.annotations }}
 
   deploy:
-    runson: ubuntu-latest
+    runs-on: ubuntu-latest
     needs: [build]
 
     steps:
